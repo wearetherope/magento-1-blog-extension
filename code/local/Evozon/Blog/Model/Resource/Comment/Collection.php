@@ -137,13 +137,13 @@ class Evozon_Blog_Model_Resource_Comment_Collection extends Mage_Core_Model_Reso
             )
             // left join with customer_entity_varchar to get the customer's firstname
             ->joinLeft(
-                array('firstname' => $this->getConnection()->getTableName('customer_entity_varchar')),
+                array('firstname' => Mage::getSingleton('core/resource')->getTableName('customer_entity_varchar')),
                 'firstname.entity_id = customer.entity_id AND firstname.attribute_id = 5',
                 array('customer_firstname' => 'firstname.value')
             )
             // left join with customer_entity_varchar to get the customer's lastname
             ->joinLeft(
-                array('lastname' => $this->getConnection()->getTableName('customer_entity_varchar')),
+                array('lastname' => Mage::getSingleton('core/resource')->getTableName('customer_entity_varchar')),
                 'lastname.entity_id = customer.entity_id AND lastname.attribute_id = 7',
                 array('customer_lastname' => 'lastname.value')
         );

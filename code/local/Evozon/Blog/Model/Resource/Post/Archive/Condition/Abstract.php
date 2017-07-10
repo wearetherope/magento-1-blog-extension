@@ -146,7 +146,7 @@ abstract class Evozon_Blog_Model_Resource_Post_Archive_Condition_Abstract extend
         $select = $this->_adapter
             ->select()
             ->from(
-            array('e' => 'evozon_blog_post_entity'), array('entity_id' => 'entity_id')
+            array('e' => Mage::getSingleton('core/resource')->getTableName('evozon_blog_post_entity')), array('entity_id' => 'entity_id')
         );
 
         //joining each attribute with the table

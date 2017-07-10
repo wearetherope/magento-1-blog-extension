@@ -293,7 +293,7 @@ class Evozon_Blog_Model_Resource_Post extends Mage_Catalog_Model_Resource_Abstra
         $select = $adapter
             ->select()
             ->from(
-                array('e' => 'evozon_blog_post_entity'), array('entity_id' => 'entity_id')
+                array('e' => Mage::getSingleton('core/resource')->getTableName('evozon_blog_post_entity')), array('entity_id' => 'entity_id')
             )
             ->where('e.entity_id=?', (int) $id);
 
